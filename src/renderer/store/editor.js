@@ -1193,6 +1193,7 @@ const actions = {
             }
 
             commit('SET_SAVE_STATUS_BY_TAB', { tab, status: false })
+            /*
             commit('PUSH_TAB_NOTIFICATION', {
               tabId: id,
               msg: `"${filename}" has been changed on disk. Do you want to reload it?`,
@@ -1204,6 +1205,11 @@ const actions = {
                 }
               }
             })
+            */
+
+            // Instead of prompting, just load the change.
+            commit('LOAD_CHANGE', change)
+
             break
           }
           default:
